@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BER INGENIERÍA SAS: servicios integrales de telecomunicaciones, ingeniería, transmisión, infraestructura, redes y soluciones de datos.">
+  <title>BER INGENIERÍA SAS | Servicios Integrales de Telecomunicaciones</title>
+  <style>
+    :root {
+      --navy: #07172d;
+      --blue: #0d2747;
+      --blue-light: #164a78;
+      --gold: #d9a62e;
+      --gold-light: #f6d56a;
+      --white: #ffffff;
+      --paper: #f4f7fb;
+      --text: #26364a;
+      --muted: #65758b;
+      --border: #dce4ee;
+      --shadow: 0 18px 45px rgba(7, 23, 45, .12);
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body { font-family: Inter, "Segoe UI", Arial, sans-serif; color: var(--text); background: var(--white); line-height: 1.65; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea, select { font: inherit; }
+    img { display: block; max-width: 100%; }
+    .container { width: min(1160px, calc(100% - 40px)); margin-inline: auto; }
+    .topline { background: var(--gold); color: var(--navy); font-size: .82rem; font-weight: 700; padding: 7px 0; }
+    .topline .container { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    header { position: sticky; top: 0; z-index: 1000; background: rgba(7,23,45,.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,.1); }
+    .navbar { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 25px; }
+    .brand { display: flex; align-items: center; gap: 12px; color: var(--white); min-width: 220px; }
+    .brand-mark { display: grid; place-items: center; width: 46px; height: 46px; border: 2px solid var(--gold); border-radius: 12px; color: var(--gold-light); font-weight: 900; letter-spacing: -2px; font-size: 1.25rem; }
+    .brand-name { font-size: 1rem; font-weight: 850; letter-spacing: .07em; line-height: 1.2; }
+    .brand-name small { display: block; color: #b9c9dc; font-size: .61rem; letter-spacing: .11em; margin-top: 5px; font-weight: 600; }
+    .nav-links { display: flex; align-items: center; gap: 22px; list-style: none; }
+    .nav-links a { color: #e8eef6; font-size: .88rem; font-weight: 650; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold-light); }
+    .nav-cta { background: var(--gold); color: var(--navy) !important; padding: 11px 16px; border-radius: 8px; }
+    .menu-toggle { display: none; background: transparent; border: 1px solid #61738a; color: white; border-radius: 8px; padding: 8px 11px; cursor: pointer; font-size: 1.2rem; }
+    .hero { min-height: 620px; display: grid; align-items: center; color: var(--white); background: linear-gradient(90deg, rgba(7,23,45,.96) 0%, rgba(7,23,45,.85) 48%, rgba(7,23,45,.25) 100%), url('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=2000&q=85') center/cover; }
+    .hero-content { padding: 90px 0; max-width: 760px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--gold-light); font-size: .78rem; font-weight: 800; letter-spacing: .17em; text-transform: uppercase; margin-bottom: 18px; }
+    .eyebrow::before { content: ""; width: 32px; height: 2px; background: var(--gold); }
+    h1 { font-size: clamp(2.5rem, 5.6vw, 4.7rem); line-height: 1.06; letter-spacing: -.045em; margin-bottom: 22px; }
+    h1 span { color: var(--gold-light); }
+    .hero p { color: #d5dfeb; font-size: clamp(1rem, 1.7vw, 1.18rem); max-width: 650px; margin-bottom: 30px; }
+    .actions { display: flex; gap: 13px; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; border: 1px solid transparent; border-radius: 9px; padding: 13px 19px; font-weight: 800; cursor: pointer; transition: transform .2s, background .2s; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--gold); color: var(--navy); }
+    .btn-outline { border-color: rgba(255,255,255,.55); color: white; background: rgba(255,255,255,.04); }
+    .section { padding: 88px 0; }
+    .section-soft { background: var(--paper); }
+    .section-dark { background: var(--navy); color: var(--white); }
+    .section-heading { max-width: 720px; margin-bottom: 38px; }
+    .section-heading.center { margin-inline: auto; text-align: center; }
+    .section-heading h2 { color: var(--navy); font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; margin-bottom: 14px; letter-spacing: -.035em; }
+    .section-dark .section-heading h2 { color: white; }
+    .section-heading p { color: var(--muted); }
+    .section-dark .section-heading p { color: #c1cddd; }
+    .gold-line { width: 58px; height: 4px; background: var(--gold); border-radius: 5px; margin-bottom: 18px; }
+    .section-heading.center .gold-line { margin-inline: auto; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 54px; align-items: center; }
+    .about-photo { position: relative; }
+    .about-photo img { width: 100%; height: 420px; object-fit: cover; border-radius: var(--radius); box-shadow: var(--shadow); }
+    .photo-label { position: absolute; bottom: 20px; left: -16px; max-width: 230px; padding: 18px 20px; border-radius: 12px; background: var(--gold); color: var(--navy); font-weight: 850; box-shadow: var(--shadow); }
+    .about-copy h2 { color: var(--navy); font-size: clamp(2rem, 3.8vw, 2.8rem); line-height: 1.15; margin-bottom: 18px; }
+    .about-copy p { color: var(--muted); margin-bottom: 15px; }
+    .check-list { list-style: none; display: grid; gap: 12px; margin-top: 22px; }
+    .check-list li { display: flex; gap: 11px; align-items: flex-start; }
+    .check { color: #9b710d; font-weight: 900; }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .service-card { background: white; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: 0 8px 24px rgba(7,23,45,.045); transition: transform .25s, box-shadow .25s; display: flex; flex-direction: column; }
+    .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+    .service-card img { height: 190px; width: 100%; object-fit: cover; }
+    .service-body { padding: 24px; display: flex; flex-direction: column; flex: 1; }
+    .service-icon { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 12px; background: #fff5d9; color: #78540a; font-size: 1.35rem; margin-top: -45px; position: relative; border: 4px solid white; }
+    .service-body h3 { color: var(--navy); font-size: 1.18rem; margin: 14px 0 9px; }
+    .service-body p { color: var(--muted); font-size: .94rem; margin-bottom: 16px; }
+    .service-body ul { padding-left: 18px; color: var(--muted); font-size: .88rem; margin-bottom: 20px; }
+    .text-link { color: #875f00; font-weight: 850; margin-top: auto; display: inline-flex; gap: 7px; align-items: center; }
+    .text-link:hover { color: var(--blue-light); }
+    .feature-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .feature { border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.045); padding: 25px; border-radius: 14px; }
+    .feature .symbol { color: var(--gold-light); font-size: 1.8rem; margin-bottom: 13px; }
+    .feature h3 { font-size: 1.05rem; margin-bottom: 8px; }
+    .feature p { color: #c1cddd; font-size: .9rem; }
+    .country-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .country { padding: 17px 20px; border: 1px solid var(--border); border-radius: 10px; background: white; font-weight: 750; display: flex; align-items: center; gap: 10px; }
+    .country::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex: 0 0 auto; }
+    .contact-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 45px; align-items: start; }
+    .contact-info { background: var(--navy); color: white; padding: 32px; border-radius: var(--radius); }
+    .contact-info h3 { font-size: 1.5rem; margin-bottom: 12px; }
+    .contact-info p { color: #c1cddd; margin-bottom: 24px; }
+    .contact-item { border-top: 1px solid rgba(255,255,255,.15); padding: 17px 0; }
+    .contact-item strong { color: var(--gold-light); display: block; font-size: .82rem; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 4px; }
+    .contact-form { padding: 32px; border: 1px solid var(--border); border-radius: var(--radius); background: white; box-shadow: 0 10px 30px rgba(7,23,45,.05); }
+    .contact-form h3 { color: var(--navy); font-size: 1.45rem; margin-bottom: 7px; }
+    .contact-form > p { color: var(--muted); margin-bottom: 22px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 15px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { color: var(--navy); font-weight: 750; font-size: .88rem; }
+    .field input, .field select, .field textarea { width: 100%; border: 1px solid #cfd9e5; border-radius: 8px; padding: 12px 13px; color: var(--text); background: #fbfcfe; outline: none; }
+    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--blue-light); box-shadow: 0 0 0 3px rgba(22,74,120,.1); }
+    .field textarea { min-height: 120px; resize: vertical; }
+    .form-note { font-size: .8rem; color: var(--muted); margin-top: 12px; }
+    footer { background: #04101f; color: #c1cddd; padding: 28px 0; }
+    .footer-row { display: flex; justify-content: space-between; align-items: center; gap: 18px; flex-wrap: wrap; }
+    .footer-row strong { color: white; }
+    .footer-links { display: flex; gap: 18px; flex-wrap: wrap; font-size: .88rem; }
+    .footer-links a:hover { color: var(--gold-light); }
+    .back-top { position: fixed; right: 20px; bottom: 20px; z-index: 900; border: 0; background: var(--gold); color: var(--navy); border-radius: 50%; width: 46px; height: 46px; font-size: 1.25rem; font-weight: 900; box-shadow: var(--shadow); cursor: pointer; display: none; }
+    .back-top.visible { display: block; }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.in-view { opacity: 1; transform: translateY(0); }
+    @media (max-width: 1000px) {
+      .nav-links { gap: 13px; }
+      .nav-links a { font-size: .8rem; }
+      .service-grid { grid-template-columns: repeat(2, 1fr); }
+      .feature-grid { grid-template-columns: repeat(2, 1fr); }
+      .country-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 760px) {
+      .topline .container { justify-content: center; text-align: center; }
+      .navbar { min-height: 70px; }
+      .menu-toggle { display: inline-block; }
+      .nav-links { display: none; position: absolute; top: 70px; left: 0; right: 0; padding: 18px 22px 24px; background: var(--navy); flex-direction: column; align-items: stretch; gap: 4px; border-top: 1px solid rgba(255,255,255,.12); box-shadow: var(--shadow); }
+      .nav-links.open { display: flex; }
+      .nav-links a { display: block; padding: 11px 9px; font-size: .95rem; }
+      .nav-cta { text-align: center; margin-top: 7px; }
+      .hero { min-height: 590px; background-position: 58% center; }
+      .hero-content { padding: 75px 0; }
+      .section { padding: 65px 0; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 35px; }
+      .about-photo img { height: 330px; }
+      .photo-label { left: 10px; bottom: 10px; }
+      .service-grid { grid-template-columns: 1fr; }
+      .country-grid { grid-template-columns: repeat(2, 1fr); }
+      .form-grid { grid-template-columns: 1fr; gap: 0; }
+      .field.full { grid-column: auto; }
+    }
+    @media (max-width: 420px) {
+      .container { width: min(100% - 28px, 1160px); }
+      .brand { min-width: 0; }
+      .brand-name { font-size: .84rem; }
+      .brand-name small { font-size: .52rem; }
+      .brand-mark { width: 40px; height: 40px; }
+      .feature-grid, .country-grid { grid-template-columns: 1fr; }
+      .contact-info, .contact-form { padding: 23px; }
+      .btn { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+
+    /* Intro corporativa BER: sin tarjeta ni marco */
+    .ber-intro {
+      position: fixed; inset: 0; z-index: 99999;
+      display: grid; place-items: center; overflow: hidden;
+      background:
+        radial-gradient(ellipse at 50% 42%, rgba(22,74,120,.34), transparent 48%),
+        linear-gradient(135deg, #050e1c 0%, #07172d 55%, #020812 100%);
+      opacity: 1; visibility: visible;
+      transition: opacity .85s ease, visibility .85s ease;
+    }
+    .ber-intro::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background: linear-gradient(110deg, transparent 35%, rgba(246,213,106,.035) 50%, transparent 65%);
+      animation: berAmbient 3.4s ease-in-out infinite;
+    }
+    .ber-intro.is-leaving { opacity: 0; visibility: hidden; pointer-events: none; }
+    .ber-intro-content {
+      position: relative; z-index: 1; display: flex; flex-direction: column;
+      align-items: center; text-align: center; padding: 24px;
+      width: min(92vw, 620px);
+    }
+    .ber-intro-emblem {
+      width: clamp(92px, 15vw, 145px); height: clamp(92px, 15vw, 145px);
+      object-fit: contain; margin-bottom: 10px; opacity: 0;
+      filter: drop-shadow(0 0 0 rgba(246,213,106,0));
+      animation: emblemIn .75s ease-out .1s forwards;
+    }
+    .ber-wordmark {
+      display: flex; align-items: center; justify-content: center;
+      gap: clamp(13px, 3vw, 29px); line-height: .98;
+      font-family: "Arial Black", "Segoe UI", Arial, sans-serif;
+      font-weight: 900; font-size: clamp(5rem, 18vw, 9.4rem);
+      letter-spacing: .045em; color: #eaf0f7;
+      perspective: 500px;
+    }
+    .ber-letter {
+      position: relative; display: inline-block; opacity: 0;
+      color: #dce5ef; transform: translateY(18px) scale(.94);
+      text-shadow: 0 0 1px rgba(255,255,255,.2);
+      animation: letterAppear .55s cubic-bezier(.2,.8,.2,1) forwards,
+                 letterSweep .95s ease-in-out forwards,
+                 letterFinalGlow 1.05s ease-out forwards;
+    }
+    .ber-letter::after {
+      content: ""; position: absolute; inset: -4% -14%;
+      background: linear-gradient(105deg, transparent 0%, rgba(255,255,255,0) 36%,
+        #fff 48%, #f6d56a 52%, rgba(246,213,106,0) 65%, transparent 100%);
+      background-size: 260% 100%; background-position: 130% 0;
+      -webkit-background-clip: text; background-clip: text;
+      color: transparent; opacity: 0; pointer-events: none;
+      animation: lightPass .9s ease-in-out forwards;
+    }
+    .ber-b { animation-delay: .55s, .7s, 1.45s; }
+    .ber-e { animation-delay: .95s, 1.1s, 1.8s; }
+    .ber-r { animation-delay: 1.35s, 1.5s, 2.15s; }
+    .ber-b::after { animation-delay: .72s; }
+    .ber-e::after { animation-delay: 1.12s; }
+    .ber-r::after { animation-delay: 1.52s; }
+    .ber-intro-rule {
+      width: min(290px, 65vw); height: 1px; margin-top: 25px;
+      background: linear-gradient(90deg, transparent, #d9a62e, #f6d56a, #d9a62e, transparent);
+      transform: scaleX(0); transform-origin: center;
+      animation: ruleIn .7s ease-out 1.75s forwards;
+    }
+    .ber-intro-name {
+      margin-top: 13px; color: #f6d56a; font-size: clamp(.85rem, 2.8vw, 1.1rem);
+      font-weight: 750; letter-spacing: .35em; opacity: 0;
+      animation: captionIn .65s ease-out 1.85s forwards;
+    }
+    .ber-intro-tagline {
+      margin-top: 9px; color: #aebed1; font-size: clamp(.55rem, 2vw, .72rem);
+      letter-spacing: .15em; opacity: 0; animation: captionIn .65s ease-out 2.05s forwards;
+    }
+    .brand-mark {
+      display: grid; place-items: center; width: 48px; height: 48px;
+      border: 0; border-radius: 0; overflow: visible; background: transparent;
+    }
+    .brand-mark img { width: 100%; height: 100%; object-fit: contain; }
+    @keyframes emblemIn {
+      from { opacity: 0; transform: translateY(10px) scale(.9); }
+      to { opacity: 1; transform: translateY(0) scale(1); filter: drop-shadow(0 0 13px rgba(246,213,106,.18)); }
+    }
+    @keyframes letterAppear { to { opacity: 1; transform: translateY(0) scale(1); } }
+    @keyframes letterSweep {
+      0% { text-shadow: 0 0 0 rgba(246,213,106,0); }
+      45% { text-shadow: 0 0 22px rgba(246,213,106,.9), 0 0 42px rgba(246,213,106,.45); }
+      100% { text-shadow: 0 0 5px rgba(246,213,106,.15); }
+    }
+    @keyframes lightPass {
+      0% { opacity: 0; background-position: 130% 0; }
+      15% { opacity: 1; }
+      75% { opacity: .95; background-position: -80% 0; }
+      100% { opacity: 0; background-position: -100% 0; }
+    }
+    @keyframes letterFinalGlow {
+      0%, 55% { color: #dce5ef; }
+      72% { color: #fff9df; text-shadow: 0 0 24px rgba(246,213,106,.95), 0 0 60px rgba(246,213,106,.55); }
+      100% { color: #f6d56a; text-shadow: 0 0 12px rgba(246,213,106,.45), 0 0 32px rgba(246,213,106,.2); }
+    }
+    @keyframes ruleIn { to { transform: scaleX(1); } }
+    @keyframes captionIn { to { opacity: 1; transform: translateY(0); } }
+    @keyframes berAmbient { 0%,100% { opacity: .25; } 50% { opacity: .8; } }
+    @media (max-width: 480px) {
+      .ber-intro-content { padding: 18px 12px; }
+      .ber-wordmark { gap: 12px; }
+      .ber-intro-tagline { max-width: 280px; line-height: 1.6; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .ber-intro *, .ber-intro::before { animation-duration: .01ms !important; animation-delay: 0ms !important; }
+      .ber-intro-emblem, .ber-letter, .ber-intro-name, .ber-intro-tagline { opacity: 1 !important; transform: none !important; }
+      .ber-intro-rule { transform: scaleX(1); }
+    }
+
+  
+    /* Botón flotante de WhatsApp */
+    .whatsapp-float { position: fixed; right: 22px; bottom: 22px; z-index: 1200; display: inline-flex; align-items: center; gap: 10px; padding: 13px 18px; border-radius: 999px; background: #168b54; color: #fff; font-weight: 700; text-decoration: none; box-shadow: 0 10px 28px rgba(0,0,0,.25); transition: transform .2s ease, box-shadow .2s ease; }
+    .whatsapp-float:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(0,0,0,.3); }
+    .whatsapp-float svg { width: 23px; height: 23px; flex: 0 0 auto; }
+    @media (max-width: 520px) { .whatsapp-float { right: 14px; bottom: 14px; padding: 13px; } .whatsapp-float .wa-label { display: none; } }
+
+  </style>
+</head>
+<body>
+
+  <div id="berIntro" class="ber-intro" aria-label="Bienvenido a BER Ingeniería SAS">
+    <div class="ber-intro-content">
+      <img class="ber-intro-emblem" src="img/logo-ber-original.png" alt="" fetchpriority="high">
+      <div class="ber-wordmark" aria-label="BER">
+        <span class="ber-letter ber-b">B</span>
+        <span class="ber-letter ber-e">E</span>
+        <span class="ber-letter ber-r">R</span>
+      </div>
+      <div class="ber-intro-rule"></div>
+      <p class="ber-intro-name">INGENIERÍA SAS</p>
+      <p class="ber-intro-tagline">SERVICIOS INTEGRALES DE TELECOMUNICACIONES</p>
+    </div>
+  </div>
+
+  <div class="topline">
+    <div class="container">
+      <span>Soluciones integrales de telecomunicaciones</span>
+      <a href="mailto:ber.ingenieria@madingenieria.com">✉ ber.ingenieria@madingenieria.com</a>
+    </div>
+  </div>
+
+  <header>
+    <nav class="navbar container" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" aria-label="BER Ingeniería, inicio">
+        <span class="brand-mark"><img src="img/logo-ber-original.png" alt="" loading="eager"></span>
+        <span class="brand-name">BER INGENIERÍA SAS<small>TELECOMUNICACIONES</small></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#empresa">La empresa</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#experiencia">Experiencia</a></li>
+        <li><a href="#talento">Talento humano</a></li>
+        <li><a class="nav-cta" href="#contacto">Contáctenos ↗</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container">
+        <div class="hero-content reveal">
+          <span class="eyebrow">Ingeniería · Conectividad · Innovación</span>
+          <h1>Conectamos tecnología con <span>resultados.</span></h1>
+          <p>Soluciones integrales de ingeniería en telecomunicaciones, transmisión, infraestructura y redes, respaldadas por conocimiento técnico y experiencia internacional.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#servicios">Explorar servicios <span>↗</span></a>
+            <a class="btn btn-outline" href="#contacto">Hablar con nuestro equipo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="empresa">
+      <div class="container about-grid">
+        <div class="about-photo reveal">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1100&q=85" alt="Tecnología y componentes electrónicos" loading="lazy">
+          <div class="photo-label">Ingeniería aplicada. Soluciones integrales.</div>
+        </div>
+        <div class="about-copy reveal">
+          <div class="gold-line"></div>
+          <span class="eyebrow">Quiénes somos</span>
+          <h2>Experiencia técnica al servicio de la conectividad.</h2>
+          <p>BER INGENIERÍA SAS es una empresa colombiana especializada en instalación, soporte y servicios de ingeniería en telecomunicaciones, con experiencia internacional y enfoque en tecnología.</p>
+          <p>La presentación corporativa también destaca la asociación con MD Ingeniería y Tecnología de Chile en áreas como gobernanza de datos, telemetría y análisis predictivo de imágenes y datos.</p>
+          <ul class="check-list">
+            <li><span class="check">✓</span><span>Soluciones orientadas a las necesidades del cliente.</span></li>
+            <li><span class="check">✓</span><span>Personal multitecnológico y experiencia regional.</span></li>
+            <li><span class="check">✓</span><span>Enfoque en calidad, cumplimiento y optimización de recursos.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="servicios">
+      <div class="container">
+        <div class="section-heading center reveal">
+          <div class="gold-line"></div>
+          <span class="eyebrow">Qué hacemos</span>
+          <h2>Servicios especializados</h2>
+          <p>Explore nuestras áreas de servicio y encuentre soluciones de ingeniería, transmisión, operación, infraestructura y tecnología de datos.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card reveal">
+            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=900&q=80" alt="Equipos y redes de telecomunicaciones" loading="lazy">
+            <div class="service-body">
+              <span class="service-icon">⌁</span>
+              <h3>Ingeniería de telecomunicaciones</h3>
+              <p>Estudios, diseño, programación e integración de soluciones de telecomunicaciones.</p>
+              <ul><li>Estudios de programación, cálculo y factibilidad</li><li>Mediciones RF, Site Survey y Frequency Survey</li><li>Cálculo de enlace y programación de nodos</li><li>Integración de equipamiento celular</li></ul>
+              <a class="text-link" href="#contacto" data-service="Ingeniería de telecomunicaciones">Consultar servicio →</a>
+            </div>
+          </article>
+          <article class="service-card reveal">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=900&q=80" alt="Conectividad global y transmisión de datos" loading="lazy">
+            <div class="service-body">
+              <span class="service-icon">⌘</span>
+              <h3>Transmisión y sistemas</h3>
+              <p>Instalación, programación, pruebas y puesta en servicio de sistemas de transmisión.</p>
+              <ul><li>Sistemas celulares indoor y outdoor</li><li>Microondas, SDH y PDH</li><li>Wireless Local Loop</li><li>Sistemas satelitales</li></ul>
+              <a class="text-link" href="#contacto" data-service="Transmisión y sistemas">Consultar servicio →</a>
+            </div>
+          </article>
+          <article class="service-card reveal">
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=80" alt="Infraestructura de servidores y redes" loading="lazy">
+            <div class="service-body">
+              <span class="service-icon">▦</span>
+              <h3>Redes IP</h3>
+              <p>Instalación, programación y puesta en servicio de redes IP.</p>
+              <ul><li>Configuración e integración de redes</li><li>Equipos Alcatel, Cisco, 3COM y otros</li><li>Soporte de infraestructura de red</li></ul>
+              <a class="text-link" href="#contacto" data-service="Redes IP">Consultar servicio →</a>
+            </div>
+          </article>
+          <article class="service-card reveal">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80" alt="Personal trabajando en construcción e infraestructura" loading="lazy">
+            <div class="service-body">
+              <span class="service-icon">⌂</span>
+              <h3>Construcción e infraestructura</h3>
+              <p>Construcción de infraestructura de telecomunicaciones y trabajos especializados.</p>
+              <ul><li>Infraestructura de telecomunicaciones</li><li>Trabajos en torres y estructuras elevadas</li><li>Personal calificado para trabajos en altura</li></ul>
+              <a class="text-link" href="#contacto" data-service="Construcción e infraestructura">Consultar servicio →</a>
+            </div>
+          </article>
+          <article class="service-card reveal">
+            <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=900&q=80" alt="Ingeniería técnica y mantenimiento de equipos" loading="lazy">
+            <div class="service-body">
+              <span class="service-icon">⚙</span>
+              <h3>Operación y mantenimiento</h3>
+              <p>Operación y mantenimiento de sistemas de telecomunicaciones.</p>
+              <ul><li>Soporte técnico</li><li>Mantenimiento de sistemas</li><li>Atención continua 24/7, según la presentación corporativa</li></ul>
+              <a class="text-link" href="#contacto" data-service="Operación y mantenimiento">Consultar servicio →</a>
+            </div>
+          </article>
+          <article class="service-card reveal">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80" alt="Visualización y análisis de datos" loading="lazy">
+            <div class="service-body">
+              <span class="service-icon">◫</span>
+              <h3>Datos e innovación</h3>
+              <p>Servicios relacionados con gobernanza de datos y análisis de información.</p>
+              <ul><li>Gobernanza de datos</li><li>Telemetría</li><li>Análisis predictivo de imágenes y datos</li><li>Consultoría y suministro de equipamiento</li></ul>
+              <a class="text-link" href="#contacto" data-service="Datos e innovación">Consultar servicio →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="talento">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div class="gold-line"></div>
+          <span class="eyebrow">Nuestro diferencial</span>
+          <h2>Personas preparadas. Trabajo de calidad.</h2>
+          <p>La presentación corporativa destaca el recurso humano como una prioridad, junto con la seguridad, la capacitación y el seguimiento del desempeño.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature reveal"><div class="symbol">◇</div><h3>Personal multitecnológico</h3><p>Experiencia en diversas tecnologías y plataformas de telecomunicaciones.</p></article>
+          <article class="feature reveal"><div class="symbol">⬡</div><h3>Seguridad laboral</h3><p>Seguimiento de indicadores de desempeño y accidentalidad.</p></article>
+          <article class="feature reveal"><div class="symbol">↗</div><h3>Medición del desempeño</h3><p>Orientación a resultados y mejora de la calidad del servicio.</p></article>
+          <article class="feature reveal"><div class="symbol">✧</div><h3>Capacitación continua</h3><p>Entrenamiento interno y participación en cursos de formación.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experiencia">
+      <div class="container">
+        <div class="section-heading center reveal">
+          <div class="gold-line"></div>
+          <span class="eyebrow">Experiencia internacional</span>
+          <h2>Presencia y trayectoria regional</h2>
+          <p>La presentación menciona experiencia en diferentes mercados latinoamericanos y referencias de operadores y entidades del sector.</p>
+        </div>
+        <div class="country-grid reveal">
+          <div class="country">Colombia</div><div class="country">Chile</div><div class="country">Venezuela</div><div class="country">Panamá</div>
+          <div class="country">Argentina</div><div class="country">Brasil</div><div class="country">Paraguay</div><div class="country">Ecuador</div>
+          <div class="country">Perú</div><div class="country">El Salvador</div><div class="country">Costa Rica</div><div class="country">Aruba</div>
+        </div>
+        <p style="text-align:center;color:var(--muted);font-size:.82rem;margin-top:18px">Los países reflejan la información de la presentación corporativa; validar con el cliente cuáles deben mostrarse como operaciones actuales.</p>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="logistica">
+      <div class="container">
+        <div class="section-heading center reveal">
+          <div class="gold-line"></div>
+          <span class="eyebrow">Capacidad operativa</span>
+          <h2>Logística para atender proyectos</h2>
+          <p>Recursos y capacidades descritos en la presentación de BER INGENIERÍA SAS.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature reveal" style="background:white;border-color:var(--border)"><div class="symbol">⌖</div><h3 style="color:var(--navy)">Oficina principal</h3><p style="color:var(--muted)">Dirección indicada en la presentación: calle 41 N.º 10-28, zona industrial, Playa Rica, Pereira, Risaralda, Colombia. Confirmar antes de publicar.</p></article>
+          <article class="feature reveal" style="background:white;border-color:var(--border)"><div class="symbol">▤</div><h3 style="color:var(--navy)">Sala de adiestramiento</h3><p style="color:var(--muted)">Capacidad indicada de 30 personas.</p></article>
+          <article class="feature reveal" style="background:white;border-color:var(--border)"><div class="symbol">▰</div><h3 style="color:var(--navy)">Flota de vehículos</h3><p style="color:var(--muted)">Incluye vehículos 4×4 para terrenos difíciles, según el documento.</p></article>
+          <article class="feature reveal" style="background:white;border-color:var(--border)"><div class="symbol">⇄</div><h3 style="color:var(--navy)">Alianzas estratégicas</h3><p style="color:var(--muted)">Convenios con empresas de transporte para ampliar la cobertura.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contacto">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div class="gold-line"></div>
+          <span class="eyebrow">Hablemos de su proyecto</span>
+          <h2>Contacte a BER INGENIERÍA SAS</h2>
+          <p>Comparta sus necesidades y prepare una solicitud para nuestro canal de contacto corporativo.</p>
+        </div>
+        <div class="contact-grid">
+          <aside class="contact-info reveal">
+            <h3>Estamos para ayudarle.</h3>
+            <p>Consulte nuestros servicios de ingeniería y telecomunicaciones.</p>
+            <div class="contact-item"><strong>Correo corporativo</strong><a href="mailto:ber.ingenieria@madingenieria.com">ber.ingenieria@madingenieria.com</a></div>
+            <div class="contact-item"><strong>Ubicación indicada</strong><span>Pereira, Risaralda, Colombia</span></div>
+            <div class="contact-item"><strong>Áreas de consulta</strong><span>Ingeniería · Transmisión · Redes IP · Infraestructura · Datos</span></div>
+          </aside>
+          <form class="contact-form reveal" id="contactForm">
+            <h3>Solicitar información</h3>
+            <p>Complete los campos. Se abrirá su aplicación de correo con el mensaje preparado para enviar.</p>
+            <div class="form-grid">
+              <div class="field"><label for="name">Nombre *</label><input id="name" name="name" autocomplete="name" required placeholder="Su nombre"></div>
+              <div class="field"><label for="company">Empresa</label><input id="company" name="company" autocomplete="organization" placeholder="Nombre de su empresa"></div>
+              <div class="field"><label for="email">Correo electrónico *</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="nombre@empresa.com"></div>
+              <div class="field"><label for="service">Servicio de interés *</label><select id="service" name="service" required><option value="">Seleccione una opción</option><option>Ingeniería de telecomunicaciones</option><option>Transmisión y sistemas</option><option>Redes IP</option><option>Construcción e infraestructura</option><option>Operación y mantenimiento</option><option>Datos e innovación</option><option>Capacitación</option><option>Otro / asesoría general</option></select></div>
+              <div class="field full"><label for="message">Cuéntenos sobre su proyecto *</label><textarea id="message" name="message" required placeholder="Describa brevemente lo que necesita..."></textarea></div>
+            </div>
+            <button class="btn btn-primary" type="submit">Preparar correo ↗</button>
+            <p class="form-note">Este formulario no envía datos automáticamente ni los almacena. Abre el programa de correo instalado en su dispositivo.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div><strong>BER INGENIERÍA SAS</strong><br><small>Servicios Integrales de Telecomunicaciones</small></div>
+      <div class="footer-links"><a href="#empresa">La empresa</a><a href="#servicios">Servicios</a><a href="#experiencia">Experiencia</a><a href="#contacto">Contacto</a></div>
+      <small>© <span id="year"></span> BER INGENIERÍA SAS. Todos los derechos reservados.</small>
+    </div>
+  </footer>
+
+  <button class="back-top" id="backTop" aria-label="Volver arriba">↑</button>
+  <script>
+
+    // La intro se cierra cuando termina la animación; también permite saltarla con un toque.
+    (() => {
+      const intro = document.getElementById('berIntro');
+      if (!intro) return;
+      let closed = false;
+      const closeIntro = () => {
+        if (closed) return;
+        closed = true;
+        intro.classList.add('is-leaving');
+        window.setTimeout(() => intro.remove(), 900);
+      };
+      const fallback = window.setTimeout(closeIntro, 3900);
+      intro.addEventListener('click', () => {
+        window.clearTimeout(fallback);
+        closeIntro();
+      }, { once: true });
+      window.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          window.clearTimeout(fallback);
+          closeIntro();
+        }
+      }, { once: true });
+      window.setTimeout(() => {
+        window.clearTimeout(fallback);
+        closeIntro();
+      }, 3300);
+    })();
+
+    // Menú adaptable para móviles
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+      menuToggle.textContent = isOpen ? '✕' : '☰';
+    });
+
+    // Cierra el menú después de seleccionar una sección
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Abrir menú');
+        menuToggle.textContent = '☰';
+      });
+    });
+
+    // Los botones de servicio seleccionan automáticamente la opción del formulario
+    document.querySelectorAll('[data-service]').forEach(link => {
+      link.addEventListener('click', () => {
+        const serviceSelect = document.getElementById('service');
+        const chosen = link.dataset.service;
+        for (const option of serviceSelect.options) {
+          if (option.text === chosen) {
+            serviceSelect.value = chosen;
+            break;
+          }
+        }
+      });
+    });
+
+    // Formulario: prepara un correo, pero no lo envía ni almacena información por sí solo
+    document.getElementById('contactForm').addEventListener('submit', event => {
+      event.preventDefault();
+      const form = event.currentTarget;
+      if (!form.reportValidity()) return;
+
+      const data = new FormData(form);
+      const subject = `Solicitud de información - ${data.get('service')}`;
+      const body = [
+        `Nombre: ${data.get('name')}`,
+        `Empresa: ${data.get('company') || 'No indicada'}`,
+        `Correo de contacto: ${data.get('email')}`,
+        `Servicio de interés: ${data.get('service')}`,
+        '',
+        'Descripción del proyecto:',
+        data.get('message')
+      ].join('\\n');
+
+      const mailto = `mailto:ber.ingenieria@madingenieria.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailto;
+    });
+
+    // Año automático en el pie de página
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Botón para volver arriba
+    const backTop = document.getElementById('backTop');
+    window.addEventListener('scroll', () => {
+      backTop.classList.toggle('visible', window.scrollY > 500);
+    });
+    backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Animaciones de entrada cuando los bloques aparecen en pantalla
+    const revealElements = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      revealElements.forEach(element => observer.observe(element));
+    } else {
+      revealElements.forEach(element => element.classList.add('in-view'));
+    }
+
+    // Resalta la sección visible en el menú
+    const sections = document.querySelectorAll('main section[id]');
+    if ('IntersectionObserver' in window) {
+      const navObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            navLinks.querySelectorAll('a[href^="#"]').forEach(link => {
+              link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`);
+            });
+          }
+        });
+      }, { rootMargin: '-30% 0px -60% 0px' });
+      sections.forEach(section => navObserver.observe(section));
+    }
+  </script>
+
+  <!-- Botón flotante de WhatsApp: atención del Project Manager -->
+  <a class="whatsapp-float"
+     href="https://wa.me/573132444785?text=Hola%2C%20Project%20Manager%20de%20BER%20Ingenier%C3%ADa.%20Me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20sus%20servicios."
+     target="_blank" rel="noopener noreferrer"
+     aria-label="Contactar por WhatsApp al Project Manager de BER Ingeniería">
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+      <path d="M20.52 3.48A11.8 11.8 0 0 0 12.13 0C5.57 0 .23 5.34.23 11.9c0 2.1.55 4.15 1.6 5.96L.13 24l6.3-1.65a11.9 11.9 0 0 0 5.7 1.45h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.52-8.42ZM12.14 21.8a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.84 9.84 0 0 1-1.51-5.27c0-5.46 4.44-9.9 9.9-9.9a9.83 9.83 0 0 1 7 2.9 9.83 9.83 0 0 1 2.9 7c0 5.46-4.44 9.9-9.9 9.9Zm5.43-7.41c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.5 1.69.64.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
+    </svg>
+    <span class="wa-label">Hablar con Project Manager</span>
+  </a>
+
+</body>
+</html>
