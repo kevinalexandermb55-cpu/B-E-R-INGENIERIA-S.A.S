@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="BER INGENIERÍA SAS: servicios integrales de telecomunicaciones, ingeniería, transmisión, infraestructura, redes y soluciones de datos.">
+  <meta name="description" content="BER INGENIERÍA SAS: servicios integrales de telecomunicaciones, torres y antenas, radioenlaces, transmisión, redes IP, infraestructura, mantenimiento y soluciones de datos.">
   <title>BER INGENIERÍA SAS | Servicios Integrales de Telecomunicaciones</title>
   <style>
     :root {
@@ -30,16 +30,23 @@
     .topline { background: var(--gold); color: var(--navy); font-size: .82rem; font-weight: 700; padding: 7px 0; }
     .topline .container { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
     header { position: sticky; top: 0; z-index: 1000; background: rgba(7,23,45,.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,.1); }
-    .navbar { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 25px; }
-    .brand { display: flex; align-items: center; gap: 12px; color: var(--white); min-width: 220px; }
+    .navbar { position: relative; min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+    .brand { display: flex; align-items: center; gap: 12px; color: var(--white); min-width: 220px; flex: 0 0 auto; }
+    .brand-mark img{width:100%;height:100%;object-fit:contain;border-radius:8px}
+    .nav-links{list-style:none;display:flex;align-items:center;justify-content:center;gap:clamp(9px,1.2vw,17px);flex:1;min-width:0}
+    .nav-links li{list-style:none;flex:0 0 auto}
+    .nav-links a{display:inline-flex;align-items:center;white-space:nowrap;padding:9px 0;border-bottom:2px solid transparent}
+    .nav-links a:hover,.nav-links a.active{border-bottom-color:var(--gold)}
     .brand-mark { display: grid; place-items: center; width: 46px; height: 46px; border: 2px solid var(--gold); border-radius: 12px; color: var(--gold-light); font-weight: 900; letter-spacing: -2px; font-size: 1.25rem; }
     .brand-name { font-size: 1rem; font-weight: 850; letter-spacing: .07em; line-height: 1.2; }
     .brand-name small { display: block; color: #b9c9dc; font-size: .61rem; letter-spacing: .11em; margin-top: 5px; font-weight: 600; }
-    .nav-links { display: flex; align-items: center; gap: 22px; list-style: none; }
+    .nav-tools{display:flex;align-items:center;gap:9px;flex-shrink:0}.search-toggle{display:grid;place-items:center;width:40px;height:40px;border-radius:11px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.045);color:white;font-size:1.45rem;line-height:1;cursor:pointer;transition:all .2s}.search-toggle:hover,.search-toggle[aria-expanded="true"]{border-color:var(--gold);color:var(--gold-light);background:rgba(217,166,46,.1)}
+    .search-panel{position:absolute;top:100%;right:max(20px,calc((100vw - 1160px)/2));width:min(440px,calc(100vw - 28px));padding:20px;border:1px solid rgba(217,166,46,.35);border-radius:0 0 16px 16px;background:#07172d;box-shadow:0 20px 45px rgba(0,0,0,.25);color:white}.search-panel label{display:block;font-size:.86rem;font-weight:750;margin-bottom:9px;color:#f6d56a}.search-field-wrap{display:flex;gap:6px}.search-field-wrap input{min-width:0;flex:1;border:1px solid #52657d;border-radius:9px;padding:11px 12px;background:#fff;color:#18283c;outline:none}.search-field-wrap input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(217,166,46,.16)}.search-field-wrap button{border:0;border-radius:9px;padding:0 13px;background:var(--gold);color:var(--navy);font-weight:800;cursor:pointer}.search-field-wrap .search-close{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:white;font-size:1.2rem}.search-panel p{font-size:.78rem;color:#b9c9dc;margin-top:9px}.search-panel p.search-error{color:#ffd980}
     .nav-links a { color: #e8eef6; font-size: .88rem; font-weight: 650; transition: color .2s; }
     .nav-links a:hover, .nav-links a.active { color: var(--gold-light); }
-    .nav-cta { background: var(--gold); color: var(--navy) !important; padding: 11px 16px; border-radius: 8px; }
-    .menu-toggle { display: none; background: transparent; border: 1px solid #61738a; color: white; border-radius: 8px; padding: 8px 11px; cursor: pointer; font-size: 1.2rem; }
+    .nav-links a.nav-cta { background: linear-gradient(135deg,var(--gold-light),var(--gold)); color: var(--navy) !important; padding: 10px 14px; border:1px solid rgba(246,213,106,.7); border-radius: 999px; box-shadow:0 5px 16px rgba(217,166,46,.14); font-weight:800; }
+    .nav-links a.nav-cta:hover{transform:translateY(-1px);border-color:var(--gold-light);background:var(--gold-light)}
+    .menu-toggle { display: none; background: rgba(255,255,255,.045); border: 1px solid rgba(255,255,255,.2); color: white; border-radius: 11px; width:42px;height:42px;padding:0;cursor:pointer;font-size:1.25rem;line-height:1; }
     .hero { min-height: 620px; display: grid; align-items: center; color: var(--white); background: linear-gradient(90deg, rgba(7,23,45,.96) 0%, rgba(7,23,45,.85) 48%, rgba(7,23,45,.25) 100%), url('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=2000&q=85') center/cover; }
     .hero-content { padding: 90px 0; max-width: 760px; }
     .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--gold-light); font-size: .78rem; font-weight: 800; letter-spacing: .17em; text-transform: uppercase; margin-bottom: 18px; }
@@ -117,21 +124,22 @@
     .back-top.visible { display: block; }
     .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
     .reveal.in-view { opacity: 1; transform: translateY(0); }
-    @media (max-width: 1000px) {
-      .nav-links { gap: 13px; }
-      .nav-links a { font-size: .8rem; }
+    @media (max-width: 1100px) {
+      .navbar{gap:12px}.brand{min-width:190px}.brand-name{font-size:.9rem}.nav-links{gap:9px}.nav-links a{font-size:.76rem}
       .service-grid { grid-template-columns: repeat(2, 1fr); }
       .feature-grid { grid-template-columns: repeat(2, 1fr); }
       .country-grid { grid-template-columns: repeat(3, 1fr); }
     }
-    @media (max-width: 760px) {
+    @media (max-width: 980px) {
       .topline .container { justify-content: center; text-align: center; }
       .navbar { min-height: 70px; }
-      .menu-toggle { display: inline-block; }
-      .nav-links { display: none; position: absolute; top: 70px; left: 0; right: 0; padding: 18px 22px 24px; background: var(--navy); flex-direction: column; align-items: stretch; gap: 4px; border-top: 1px solid rgba(255,255,255,.12); box-shadow: var(--shadow); }
+      .menu-toggle { display: inline-grid;place-items:center; }
+      .nav-tools{margin-left:auto;gap:8px}.search-panel{right:14px;width:min(440px,calc(100vw - 28px));}.navbar{gap:10px}
+      .nav-links { display: none; position: absolute; top: calc(100% + 1px); left: 0; right: 0; padding: 14px; background: linear-gradient(160deg,#0d2747,#07172d 78%); flex-direction: column; align-items: stretch; gap: 3px; border: 1px solid rgba(217,166,46,.28); border-top: 2px solid var(--gold); border-radius: 0 0 16px 16px; box-shadow: 0 22px 44px rgba(0,0,0,.34); }
       .nav-links.open { display: flex; }
-      .nav-links a { display: block; padding: 11px 9px; font-size: .95rem; }
-      .nav-cta { text-align: center; margin-top: 7px; }
+      .nav-links li{width:100%}.nav-links a { display: flex; width:100%; padding: 11px 13px; font-size: .94rem; border-radius: 9px;border-bottom:0; }
+      .nav-links a:hover,.nav-links a.active{background:rgba(255,255,255,.055);border-bottom-color:transparent}
+      .nav-links a.nav-cta { justify-content:center; margin-top: 7px; padding:12px 16px; }
       .hero { min-height: 590px; background-position: 58% center; }
       .hero-content { padding: 75px 0; }
       .section { padding: 65px 0; }
@@ -272,12 +280,29 @@
       .ber-intro-rule { transform: scaleX(1); }
     }
 
-  
-    /* Botón flotante de WhatsApp */
-    .whatsapp-float { position: fixed; right: 22px; bottom: 22px; z-index: 1200; display: inline-flex; align-items: center; gap: 10px; padding: 13px 18px; border-radius: 999px; background: #168b54; color: #fff; font-weight: 700; text-decoration: none; box-shadow: 0 10px 28px rgba(0,0,0,.25); transition: transform .2s ease, box-shadow .2s ease; }
-    .whatsapp-float:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(0,0,0,.3); }
-    .whatsapp-float svg { width: 23px; height: 23px; flex: 0 0 auto; }
-    @media (max-width: 520px) { .whatsapp-float { right: 14px; bottom: 14px; padding: 13px; } .whatsapp-float .wa-label { display: none; } }
+
+    /* Ampliación profesional: galería, proceso de trabajo y sectores */
+    .gallery-toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:-10px 0 18px;color:var(--muted);font-size:.9rem}.gallery-toolbar span{color:var(--gold);padding:0 5px}.gallery-controls{display:flex;gap:8px;flex-shrink:0}.gallery-arrow{width:42px;height:42px;border:1px solid #d5deea;border-radius:50%;background:white;color:var(--navy);font-size:1.6rem;line-height:1;cursor:pointer;transition:all .2s}.gallery-arrow:hover{background:var(--navy);color:var(--gold-light);border-color:var(--navy)}
+    .gallery-grid{display:grid;grid-auto-columns:calc((100% - 36px)/3);grid-auto-flow:column;gap:18px;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 2px 18px;scrollbar-width:thin;scrollbar-color:var(--gold) #e8edf3}
+    .gallery-card{position:relative;overflow:hidden;scroll-snap-align:start;border:1px solid rgba(217,166,46,.35);border-radius:16px;min-height:290px;background:var(--navy);box-shadow:0 12px 30px rgba(7,23,45,.12);cursor:pointer;isolation:isolate;outline-offset:4px}
+    .gallery-card img{width:100%;height:290px;object-fit:cover;transition:transform .5s ease;filter:saturate(.92)}
+    .gallery-card:hover img,.gallery-card:focus-visible img{transform:scale(1.055)}
+    .gallery-card:after{content:"";position:absolute;z-index:0;inset:20% 0 0;background:linear-gradient(transparent,rgba(4,16,31,.96));pointer-events:none}
+    .gallery-caption{position:absolute;z-index:1;left:19px;right:19px;bottom:18px;color:white;pointer-events:none}
+    .gallery-caption h3{font-size:1.12rem;margin-bottom:5px}.gallery-caption p{font-size:.87rem;color:#d5dfeb}.gallery-card:focus-visible{outline:3px solid var(--gold)}
+    .detail-modal[hidden],.search-panel[hidden]{display:none!important}.detail-modal{position:fixed;inset:0;z-index:2000;display:grid;place-items:center;padding:20px}.modal-backdrop{position:absolute;inset:0;width:100%;height:100%;border:0;background:rgba(2,10,22,.78);backdrop-filter:blur(6px);cursor:pointer}.detail-dialog{position:relative;z-index:1;width:min(560px,100%);padding:clamp(25px,5vw,42px);border:1px solid rgba(217,166,46,.55);border-radius:20px;background:linear-gradient(145deg,#0d2747,#07172d);color:white;box-shadow:0 28px 80px rgba(0,0,0,.4)}.detail-dialog .eyebrow{margin-bottom:12px}.detail-dialog h2{font-size:clamp(1.6rem,4vw,2.2rem);line-height:1.2;margin-bottom:14px}.detail-dialog p{color:#d5dfeb;margin-bottom:24px}.detail-close{position:absolute;top:12px;right:14px;width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:white;font-size:1.5rem;cursor:pointer}
+    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:steps}
+    .process-card{padding:25px;border:1px solid var(--border);border-radius:14px;background:#fff;counter-increment:steps}
+    .process-card:before{content:"0" counter(steps);display:block;color:#a8790c;font-weight:900;font-size:1.6rem;margin-bottom:14px;letter-spacing:.06em}
+    .process-card h3{color:var(--navy);margin-bottom:8px}.process-card p{font-size:.92rem;color:var(--muted)}
+    .sector-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .sector-card{padding:22px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.13)}
+    .sector-card h3{color:var(--gold-light);margin-bottom:8px}.sector-card p{color:#c1cddd;font-size:.92rem}
+    .cta-band{padding:38px;border-radius:18px;background:linear-gradient(120deg,#0d2747,#07172d);color:white;display:flex;align-items:center;justify-content:space-between;gap:24px;box-shadow:var(--shadow)}
+    .cta-band h2{font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.2;margin-bottom:8px}.cta-band p{color:#c1cddd;max-width:680px}
+    .gallery-note{font-size:.82rem;color:var(--muted);margin-top:15px}
+    @media(max-width:900px){.process-grid{grid-template-columns:repeat(2,1fr)}.gallery-grid{grid-auto-columns:calc((100% - 18px)/2)}.sector-grid{grid-template-columns:repeat(2,1fr)}.cta-band{align-items:flex-start;flex-direction:column}}
+    @media(max-width:560px){.process-grid,.sector-grid{grid-template-columns:1fr}.gallery-grid{grid-auto-columns:86%;gap:13px}.gallery-card,.gallery-card img{min-height:250px;height:250px}.gallery-toolbar{align-items:flex-start}.gallery-toolbar p{max-width:230px;font-size:.82rem}.gallery-arrow{width:38px;height:38px}.cta-band{padding:26px}.search-panel{padding:15px}.search-field-wrap{flex-wrap:wrap}.search-field-wrap input{flex-basis:100%}.search-field-wrap button{min-height:40px}.brand-mark{width:39px;height:39px}.brand{gap:8px}}
 
   </style>
 </head>
@@ -310,16 +335,20 @@
         <span class="brand-mark"><img src="img/logo-ber-original.png" alt="" loading="eager"></span>
         <span class="brand-name">BER INGENIERÍA SAS<small>TELECOMUNICACIONES</small></span>
       </a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
       <ul class="nav-links" id="navLinks">
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#empresa">La empresa</a></li>
         <li><a href="#servicios">Servicios</a></li>
         <li><a href="#experiencia">Experiencia</a></li>
         <li><a href="#talento">Talento humano</a></li>
+        <li><a href="#equipos">Equipos y tecnologías</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#metodologia">Metodología</a></li>
         <li><a class="nav-cta" href="#contacto">Contáctenos ↗</a></li>
       </ul>
+      <div class="nav-tools"><button class="search-toggle" id="searchToggle" type="button" aria-label="Abrir búsqueda" aria-expanded="false" title="Buscar en la página">⌕</button><button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button></div>
     </nav>
+    <div class="search-panel" id="searchPanel" hidden><form id="siteSearchForm" role="search"><label for="siteSearchInput">¿Qué desea encontrar?</label><div class="search-field-wrap"><input id="siteSearchInput" type="search" placeholder="Buscar servicios, redes, tecnología…" autocomplete="off"><button type="submit">Buscar</button><button type="button" class="search-close" id="searchClose" aria-label="Cerrar búsqueda">×</button></div><p id="searchFeedback" aria-live="polite">Busque palabras como microondas, redes IP o mantenimiento.</p></form></div>
   </header>
 
   <main>
@@ -347,7 +376,7 @@
           <div class="gold-line"></div>
           <span class="eyebrow">Quiénes somos</span>
           <h2>Experiencia técnica al servicio de la conectividad.</h2>
-          <p>BER INGENIERÍA SAS es una empresa colombiana especializada en instalación, soporte y servicios de ingeniería en telecomunicaciones, con experiencia internacional y enfoque en tecnología.</p>
+          <p>BER INGENIERÍA S.A.S. es una empresa contratista con experiencia en redes de telecomunicaciones. Desarrolla infraestructura de conectividad y presta servicios de instalación, soporte e ingeniería, orientados a ofrecer soluciones confiables, eficientes y resultados oportunos.</p>
           <p>La presentación corporativa también destaca la asociación con MD Ingeniería y Tecnología de Chile en áreas como gobernanza de datos, telemetría y análisis predictivo de imágenes y datos.</p>
           <ul class="check-list">
             <li><span class="check">✓</span><span>Soluciones orientadas a las necesidades del cliente.</span></li>
@@ -431,6 +460,61 @@
       </div>
     </section>
 
+    <section class="section section-soft" id="equipos">
+      <div class="container">
+        <div class="section-heading center reveal">
+          <div class="gold-line"></div>
+          <span class="eyebrow">Tecnologías y plataformas</span>
+          <h2>Equipos, fabricantes y soluciones técnicas</h2>
+          <p>Relación de tecnologías y fabricantes nombrados en las presentaciones corporativas de BER Ingeniería S.A.S. La disponibilidad concreta depende del proyecto y del alcance contratado.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card reveal">
+            <img src="imagenes/ber-presentacion-p3.png" alt="Presentación corporativa: servicios de transmisión y radioenlaces" loading="lazy">
+            <div class="service-body"><span class="service-icon">⌁</span><h3>Radioenlaces de microondas (MW)</h3>
+              <p>Implementación multimarca, montaje, alineación, comisionamiento y puesta en servicio.</p>
+              <ul><li>Antenas de 0,3 m a 3,7 m de diámetro</li><li>Configuraciones de 1+0 hasta 14+0</li><li>Protección 1+1 HS hasta 8+8 HS</li><li>Pruebas de interferencia y estudios de frecuencia</li><li>Radioenlaces no licenciados de banda libre (POE), según la presentación</li><li>Montaje, comisionamiento, configuración y puesta en servicio multimarca</li><li>Alineación de antenas punto a punto (PTP) y punto a multipunto (PTMP)</li><li>Personal capacitado y certificado para trabajos en alturas y cableado especializado</li></ul>
+            </div>
+          </article>
+          <article class="service-card reveal">
+            <img src="imagenes/ber-presentacion-p1.png" alt="Servicios de transmisión y transporte digital" loading="lazy">
+            <div class="service-body"><span class="service-icon">↗</span><h3>Transporte digital y energía</h3>
+              <p>Implementación y soporte de redes de transporte digital para proyectos de telecomunicaciones.</p>
+              <ul><li>Radioenlaces MW multimarca con antenas de 0,3 m a 3,7 m</li><li>Configuraciones desde 1+0 hasta 14+0 y protección 1+1 HS hasta 8+8 HS</li><li>Instalación, mantenimiento y respaldo de energía y baterías</li><li>Migraciones tecnológicas y desmontaje de equipos antiguos</li><li>Obra civil, transporte especializado, logística inversa y documentación de cierre</li></ul>
+            </div>
+          </article>
+          <article class="service-card reveal">
+            <img src="imagenes/ber-presentacion-p4.png" alt="Presentación corporativa: implementación y trabajos especializados" loading="lazy">
+            <div class="service-body"><span class="service-icon">⚙</span><h3>Fabricantes y plataformas</h3>
+              <p>Las presentaciones mencionan experiencia multitecnológica y plataformas de distintos fabricantes.</p>
+              <ul><li>Alcatel y Alcatel-Lucent</li><li>Ericsson, Nokia y Siemens</li><li>Huawei, ZTE y Motorola</li><li>NEC y Nera</li><li>DMC, DMR, Harris y Mini Link</li><li>Lucent y otros fabricantes indicados en el documento</li></ul>
+            </div>
+          </article>
+          <article class="service-card reveal">
+            <img src="imagenes/ber-presentacion-p5.png" alt="Presentación corporativa: comisionamiento de equipos y redes" loading="lazy">
+            <div class="service-body"><span class="service-icon">⌘</span><h3>Redes IP y conectividad</h3>
+              <p>Instalación, programación, pruebas y puesta en servicio de redes y sistemas de transmisión.</p>
+              <ul><li>Cisco, 3COM y Extreme</li><li>Juniper y Foundry</li><li>Sistemas celulares indoor y outdoor</li><li>Microondas SDH y PDH</li><li>Wireless Local Loop y sistemas satelitales</li><li>Canales transaccionales, intranet y enlaces dedicados</li><li>Servicios móviles 3G, 4G, LTE y 5G</li><li>Comisionamiento y configuración de equipos MW de cualquier fabricante</li></ul>
+            </div>
+          </article>
+          <article class="service-card reveal">
+            <img src="imagenes/ber-presentacion-p2.png" alt="Presentación corporativa: infraestructura y experiencia operativa" loading="lazy">
+            <div class="service-body"><span class="service-icon">◇</span><h3>Infraestructura y soporte en campo</h3>
+              <p>Capacidad operativa para labores de infraestructura y soporte de telecomunicaciones.</p>
+              <ul><li>Instalación y mantenimiento de energía y baterías</li><li>Migraciones tecnológicas</li><li>Obra civil y adecuación de infraestructura</li><li>Logística, transporte y logística inversa</li><li>Montaje, cableado especializado y trabajos en altura</li></ul>
+            </div>
+          </article>
+        </div>
+        <div class="feature-grid" style="margin-top:24px">
+          <article class="feature reveal"><div class="symbol">⌁</div><h3>Comisionamiento multimarca</h3><p>Configuración y puesta en servicio de equipos de transmisión MW de distintos fabricantes, además de integración de tecnologías celulares 3G, 4G, LTE y 5G.</p></article>
+          <article class="feature reveal"><div class="symbol">⌖</div><h3>Pruebas y alineación</h3><p>Alineación de antenas PTP/PTMP, pruebas de interferencia, estudios de frecuencia y verificación de enlaces para apoyar la estabilidad del servicio.</p></article>
+          <article class="feature reveal"><div class="symbol">✓</div><h3>Conectividad y documentación</h3><p>Canales de datos transaccionales, intranet, enlaces dedicados, desmontaje de tecnología anterior y entrega oportuna de documentación técnica.</p></article>
+          <article class="feature reveal"><div class="symbol">⚡</div><h3>Respaldo energético</h3><p>Instalación y mantenimiento de equipos de energía y baterías para infraestructura de telecomunicaciones.</p></article>
+        </div>
+        <p class="source-note" style="margin-top:22px;color:var(--muted);font-size:.9rem">Nota: las presentaciones corporativas describen estos servicios y mencionan un compromiso de confiabilidad. Los resultados de cada proyecto dependen del alcance contratado, las condiciones técnicas y la operación en campo. Los PDF nombran familias de tecnología y fabricantes, pero no especifican modelos exactos de cada aparato.</p>
+      </div>
+    </section>
+
     <section class="section section-dark" id="talento">
       <div class="container">
         <div class="section-heading reveal">
@@ -482,6 +566,55 @@
       </div>
     </section>
 
+    <section class="section" id="galeria">
+      <div class="container">
+        <div class="section-heading center reveal">
+          <div class="gold-line"></div><span class="eyebrow">Infraestructura en campo</span>
+          <h2>La tecnología se demuestra en terreno</h2>
+          <p>Una vista de las áreas de trabajo que forman parte del sector de telecomunicaciones: infraestructura móvil, radioenlaces, redes, energía y mantenimiento.</p>
+        </div>
+        <div class="gallery-toolbar"><p>Explore las áreas técnicas <span>·</span> toque una tarjeta para conocer más</p><div class="gallery-controls"><button type="button" class="gallery-arrow" data-gallery-prev aria-label="Fotografías anteriores">‹</button><button type="button" class="gallery-arrow" data-gallery-next aria-label="Fotografías siguientes">›</button></div></div>
+        <div class="gallery-grid" id="galleryTrack">
+          <article class="gallery-card reveal" tabindex="0" role="button" data-detail-title="Infraestructura celular" data-detail="Torres, estructuras de soporte y antenas forman parte de la infraestructura que permite desplegar y ampliar redes de comunicaciones. El alcance concreto se define según el sitio, los requerimientos del operador y las condiciones de seguridad."><img src="https://images.unsplash.com/photo-1516849841032-87cbac4d88f7?auto=format&fit=crop&w=1000&q=85" alt="Torre de telecomunicaciones y antenas en altura" loading="lazy"><div class="gallery-caption"><h3>Infraestructura celular</h3><p>Torres, antenas y soporte para redes de comunicaciones.</p></div></article>
+          <article class="gallery-card reveal" tabindex="0" role="button" data-detail-title="Instalación en campo" data-detail="Las actividades de campo pueden incluir levantamiento del sitio, montaje de soportes, instalación de antenas, cableado y coordinación de recursos. Cada intervención debe ajustarse al diseño, los permisos y los procedimientos de seguridad aplicables."><img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1000&q=85" alt="Infraestructura técnica exterior" loading="lazy"><div class="gallery-caption"><h3>Instalación en campo</h3><p>Montaje y adecuación de infraestructura para proyectos técnicos.</p></div></article>
+          <article class="gallery-card reveal" tabindex="0" role="button" data-detail-title="Redes y transmisión" data-detail="Las soluciones de transmisión y redes IP facilitan el transporte de información entre equipos, nodos y sedes. El diseño depende de la capacidad requerida, la topología, la disponibilidad del enlace y los criterios de operación del proyecto."><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=85" alt="Equipos de servidores y redes" loading="lazy"><div class="gallery-caption"><h3>Redes y transmisión</h3><p>Conectividad, equipos de comunicaciones y sistemas IP.</p></div></article>
+          <article class="gallery-card reveal" tabindex="0" role="button" data-detail-title="Comisionamiento técnico" data-detail="El comisionamiento puede comprender revisión de parámetros, configuración, pruebas funcionales, verificación de conectividad y registro de resultados antes de la entrega. Las pruebas específicas dependen del equipo y de los criterios de aceptación acordados."><img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=1000&q=85" alt="Personal técnico trabajando con equipos" loading="lazy"><div class="gallery-caption"><h3>Comisionamiento técnico</h3><p>Configuración, pruebas y puesta en servicio de equipos.</p></div></article>
+          <article class="gallery-card reveal" tabindex="0" role="button" data-detail-title="Energía y electrónica" data-detail="La continuidad de los sistemas de telecomunicaciones depende también de la revisión de equipos electrónicos, alimentación y sistemas de respaldo. La solución se determina según la carga, las condiciones del sitio y los requisitos de operación."><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=85" alt="Componentes electrónicos y tecnología" loading="lazy"><div class="gallery-caption"><h3>Energía y electrónica</h3><p>Equipos, componentes y sistemas de respaldo para la operación.</p></div></article>
+          <article class="gallery-card reveal" tabindex="0" role="button" data-detail-title="Obra e infraestructura" data-detail="Las actividades de infraestructura pueden incluir adecuaciones, apoyos de obra civil, montaje y coordinación logística para habilitar instalaciones técnicas. El alcance se define por las condiciones del lugar y la documentación del proyecto."><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=85" alt="Obras de infraestructura y trabajo en campo" loading="lazy"><div class="gallery-caption"><h3>Obra e infraestructura</h3><p>Apoyo a obras civiles, adecuaciones y logística especializada.</p></div></article>
+        </div>
+        <p class="gallery-note">Importante: las fotografías de esta galería son ilustrativas del sector y no se presentan como evidencia de proyectos ejecutados por BER. Para fortalecer la confianza comercial, se recomienda reemplazarlas progresivamente por fotografías reales autorizadas de sus trabajos.</p>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="metodologia">
+      <div class="container">
+        <div class="section-heading center reveal"><div class="gold-line"></div><span class="eyebrow">Forma de trabajo</span><h2>De la necesidad técnica a la puesta en servicio</h2><p>Un esquema de trabajo claro ayuda a coordinar alcance, recursos, ejecución y entrega documental de cada proyecto.</p></div>
+        <div class="process-grid">
+          <article class="process-card reveal"><h3>Levantamiento y diagnóstico</h3><p>Comprensión de la necesidad, revisión de condiciones del sitio y recopilación de requerimientos técnicos.</p></article>
+          <article class="process-card reveal"><h3>Planeación técnica</h3><p>Definición del alcance, programación, recursos y coordinación de actividades conforme al proyecto.</p></article>
+          <article class="process-card reveal"><h3>Ejecución y verificación</h3><p>Instalación, configuración, alineación, pruebas o mantenimiento según los servicios contratados.</p></article>
+          <article class="process-card reveal"><h3>Cierre y documentación</h3><p>Organización de resultados y documentación técnica de cierre de acuerdo con los requisitos acordados.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="sectores">
+      <div class="container">
+        <div class="section-heading reveal"><div class="gold-line"></div><span class="eyebrow">Aplicaciones</span><h2>Soluciones para distintos retos de conectividad</h2><p>Las capacidades descritas por BER abarcan diferentes entornos y necesidades dentro de las telecomunicaciones y la infraestructura tecnológica.</p></div>
+        <div class="sector-grid">
+          <article class="sector-card reveal"><h3>Operadores y redes móviles</h3><p>Infraestructura celular, transmisión por microondas, integración y tecnologías móviles 3G, 4G, LTE y 5G.</p></article>
+          <article class="sector-card reveal"><h3>Empresas y redes IP</h3><p>Conectividad de datos, intranet, enlaces dedicados, configuración de redes y soporte de infraestructura IP.</p></article>
+          <article class="sector-card reveal"><h3>Infraestructura y mantenimiento</h3><p>Montaje, migraciones tecnológicas, mantenimiento, respaldo energético, logística y documentación de cierre.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-band reveal"><div><h2>¿Tiene un proyecto de telecomunicaciones?</h2><p>Conversemos sobre el alcance técnico, las necesidades de conectividad y los servicios que pueden ajustarse a su operación.</p></div><a class="btn btn-primary" href="#contacto">Solicitar información ↗</a></div>
+      </div>
+    </section>
+
     <section class="section" id="contacto">
       <div class="container">
         <div class="section-heading reveal">
@@ -516,10 +649,12 @@
     </section>
   </main>
 
+  <div class="detail-modal" id="detailModal" hidden aria-hidden="true"><button class="modal-backdrop" type="button" data-modal-close aria-label="Cerrar información"></button><section class="detail-dialog" role="dialog" aria-modal="true" aria-labelledby="detailModalTitle"><button class="detail-close" type="button" data-modal-close aria-label="Cerrar">×</button><span class="eyebrow">Tecnología en terreno</span><h2 id="detailModalTitle">Información técnica</h2><p id="detailModalText"></p><a class="btn btn-primary" href="#contacto" id="detailContactLink">Consultar sobre este servicio ↗</a></section></div>
+
   <footer>
     <div class="container footer-row">
       <div><strong>BER INGENIERÍA SAS</strong><br><small>Servicios Integrales de Telecomunicaciones</small></div>
-      <div class="footer-links"><a href="#empresa">La empresa</a><a href="#servicios">Servicios</a><a href="#experiencia">Experiencia</a><a href="#contacto">Contacto</a></div>
+      <div class="footer-links"><a href="#empresa">La empresa</a><a href="#servicios">Servicios</a><a href="#experiencia">Experiencia</a><a href="#galeria">Galería</a><a href="#sectores">Sectores</a><a href="#contacto">Contacto</a></div>
       <small>© <span id="year"></span> BER INGENIERÍA SAS. Todos los derechos reservados.</small>
     </div>
   </footer>
@@ -574,6 +709,53 @@
         menuToggle.setAttribute('aria-label', 'Abrir menú');
         menuToggle.textContent = '☰';
       });
+    });
+
+    // Búsqueda elegante: encuentra secciones por títulos, textos y nombres de servicios.
+    const searchToggle = document.getElementById('searchToggle');
+    const searchPanel = document.getElementById('searchPanel');
+    const searchInput = document.getElementById('siteSearchInput');
+    const searchForm = document.getElementById('siteSearchForm');
+    const searchFeedback = document.getElementById('searchFeedback');
+    const searchClose = document.getElementById('searchClose');
+    const closeSearch = () => { searchPanel.hidden = true; searchToggle.setAttribute('aria-expanded','false'); searchToggle.setAttribute('aria-label','Abrir búsqueda'); };
+    searchToggle.addEventListener('click', () => { const open = searchPanel.hidden; searchPanel.hidden = !open; searchToggle.setAttribute('aria-expanded',String(open)); searchToggle.setAttribute('aria-label',open?'Cerrar búsqueda':'Abrir búsqueda'); if(open) searchInput.focus(); });
+    searchClose.addEventListener('click', closeSearch);
+    searchForm.addEventListener('submit', event => {
+      event.preventDefault();
+      const query = searchInput.value.trim().toLocaleLowerCase('es');
+      if (!query) { searchFeedback.textContent = 'Escriba una palabra para iniciar la búsqueda.'; searchFeedback.classList.add('search-error'); searchInput.focus(); return; }
+      const candidates = [...document.querySelectorAll('main section[id]')];
+      const match = candidates.find(section => section.innerText.toLocaleLowerCase('es').includes(query));
+      if (match) { searchFeedback.textContent = `Encontrado: ${match.querySelector('h1,h2,h3')?.innerText || match.id}`; searchFeedback.classList.remove('search-error'); closeSearch(); match.scrollIntoView({behavior:'smooth',block:'start'}); }
+      else { searchFeedback.textContent = 'No encontramos coincidencias. Pruebe con “microondas”, “redes”, “servicios” o “contacto”.'; searchFeedback.classList.add('search-error'); }
+    });
+    document.addEventListener('keydown', event => { if(event.key === 'Escape'){ closeSearch(); closeDetailModal(); } });
+
+    // Carrusel táctil con controles de navegación para escritorio.
+    const galleryTrack = document.getElementById('galleryTrack');
+    document.querySelector('[data-gallery-prev]')?.addEventListener('click', () => galleryTrack.scrollBy({left:-galleryTrack.clientWidth * .82,behavior:'smooth'}));
+    document.querySelector('[data-gallery-next]')?.addEventListener('click', () => galleryTrack.scrollBy({left:galleryTrack.clientWidth * .82,behavior:'smooth'}));
+
+    // Las tarjetas abren una ventana de detalle, compatible con móvil y computador.
+    const detailModal = document.getElementById('detailModal');
+    const detailTitle = document.getElementById('detailModalTitle');
+    const detailText = document.getElementById('detailModalText');
+    const detailContactLink = document.getElementById('detailContactLink');
+    let lastDetailTrigger = null;
+    function openDetailModal(card){
+      lastDetailTrigger = card;
+      detailTitle.textContent = card.dataset.detailTitle || card.querySelector('h3')?.textContent || 'Información técnica';
+      detailText.textContent = card.dataset.detail || card.querySelector('p')?.textContent || 'Consulte con nuestro equipo para conocer el alcance de este servicio.';
+      detailModal.hidden = false; detailModal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden';
+      detailModal.querySelector('.detail-close').focus();
+    }
+    function closeDetailModal(){ if(!detailModal || detailModal.hidden) return; detailModal.hidden=true; detailModal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; if(lastDetailTrigger) lastDetailTrigger.focus(); }
+    detailModal.querySelectorAll('[data-modal-close]').forEach(button=>button.addEventListener('click',closeDetailModal));
+    detailContactLink.addEventListener('click',closeDetailModal);
+    document.querySelectorAll('.gallery-card[role="button"]').forEach(card=>{
+      card.addEventListener('click',()=>openDetailModal(card));
+      card.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();openDetailModal(card);}});
     });
 
     // Los botones de servicio seleccionan automáticamente la opción del formulario
@@ -653,17 +835,12 @@
       sections.forEach(section => navObserver.observe(section));
     }
   </script>
+  <a class="whatsapp-float" href="https://wa.me/573132444785?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20los%20servicios%20de%20BER%20Ingenier%C3%ADa%20S.A.S." target="_blank" rel="noopener" aria-label="Contactar a BER Ingeniería por WhatsApp" title="Escríbenos por WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3.2A12.2 12.2 0 0 0 5.5 21.6L4 28l6.6-1.7A12.2 12.2 0 1 0 16 3.2Zm0 22.1c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.9 1 1-3.8-.3-.4a9.7 9.7 0 1 1 8.6 4.8Zm5.3-7.3c-.3-.2-1.8-.9-2.1-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.7l.5-.6.3-.5c.1-.2 0-.4 0-.6l-1-2.2c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.2-1.2 2.8 1.2 3.2 1.4 3.4 2.4 3.7 5.8 5.1c.8.3 1.4.5 1.9.6.8.2 1.5.2 2.1.1.6-.1 1.8-.7 2-1.4s.3-1.3.2-1.4-.3-.2-.6-.4Z"/></svg><span>Escríbenos</span></a>
 
-  <!-- Botón flotante de WhatsApp: atención del Project Manager -->
-  <a class="whatsapp-float"
-     href="https://wa.me/573132444785?text=Hola%2C%20Project%20Manager%20de%20BER%20Ingenier%C3%ADa.%20Me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20sus%20servicios."
-     target="_blank" rel="noopener noreferrer"
-     aria-label="Contactar por WhatsApp al Project Manager de BER Ingeniería">
-    <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
-      <path d="M20.52 3.48A11.8 11.8 0 0 0 12.13 0C5.57 0 .23 5.34.23 11.9c0 2.1.55 4.15 1.6 5.96L.13 24l6.3-1.65a11.9 11.9 0 0 0 5.7 1.45h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.52-8.42ZM12.14 21.8a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.84 9.84 0 0 1-1.51-5.27c0-5.46 4.44-9.9 9.9-9.9a9.83 9.83 0 0 1 7 2.9 9.83 9.83 0 0 1 2.9 7c0 5.46-4.44 9.9-9.9 9.9Zm5.43-7.41c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.5 1.69.64.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
-    </svg>
-    <span class="wa-label">Hablar con Project Manager</span>
-  </a>
-
+  <style>
+    .whatsapp-float{position:fixed;right:22px;bottom:22px;z-index:1200;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:12px 18px;border:1px solid rgba(255,255,255,.65);border-radius:999px;background:#128c53;color:#fff;text-decoration:none;font-weight:800;letter-spacing:.01em;box-shadow:0 10px 30px rgba(4,16,31,.28),0 0 0 4px rgba(18,140,83,.12);transition:transform .2s,box-shadow .2s,background .2s}.whatsapp-float svg{width:25px;height:25px;fill:currentColor;flex:0 0 auto}.whatsapp-float:hover{transform:translateY(-3px);background:#0d7545;box-shadow:0 14px 34px rgba(4,16,31,.32),0 0 0 5px rgba(18,140,83,.15)}.whatsapp-float:focus-visible{outline:3px solid var(--gold-light);outline-offset:4px}
+    @media(max-width:480px){.whatsapp-float{right:14px;bottom:14px;min-height:54px;width:54px;padding:0;border-radius:50%}.whatsapp-float span{display:none}.whatsapp-float svg{width:28px;height:28px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.gallery-grid{scroll-behavior:auto}.gallery-card img,.gallery-arrow,.whatsapp-float{transition:none}}
+  </style>
 </body>
 </html>
